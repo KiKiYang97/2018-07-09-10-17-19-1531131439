@@ -11,6 +11,7 @@ introduce方法返回一个字符串形如：
 但是Student的Klass属性不是一个数字，而是一个对象，写一个Klass类，有number属性还有一个leader属性。但是leader属性不在构造器里。
 
 Student构造的时候把Klass的一个实例传给Student，参见测试用例。
+
 Klass有一个assignLeader方法，接收一个Student实例。意为将一名学生设置为该Klass的班长。
 如果Klass的Leader是Tom，那么Tom调用introduce的方法就要返回：
 
