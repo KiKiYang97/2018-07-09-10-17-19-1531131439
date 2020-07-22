@@ -33,7 +33,7 @@ public class Person {
         return "My name is "+name+". I am "+age+" years old.";
     }
 
-//    重载object的equals
+//    override object equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
