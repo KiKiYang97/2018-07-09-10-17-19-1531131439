@@ -7,17 +7,17 @@ public class Student extends Person {
         super(name, age);
     }
 
-    public Student(String name, int age, int kclass) {
+    public Student(String name, int age, int klass) {
         super(name, age);
-        this.klass = kclass;
+        this.klass = klass;
     }
 
     public int getKlass() {
         return klass;
     }
 
-    public void setKlass(int kclass) {
-        this.klass = kclass;
+    public void setKlass(int klass) {
+        this.klass = klass;
     }
 
     public String introduce() {
