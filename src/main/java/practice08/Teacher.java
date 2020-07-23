@@ -21,20 +21,19 @@ public class Teacher extends Person {
         this.klass = klass;
     }
 
-    public String introduce(){
-        if(klass!=null){
-            return super.introduce()+" I am a Teacher. I teach Class "+klass.getNumber()+".";
-        }
-        else{
-            return super.introduce()+" I am a Teacher. I teach No Class.";
+    public String introduce() {
+        if (klass != null) {
+            return super.introduce() + " I am a Teacher. I teach Class " + klass.getNumber() + ".";
+        } else {
+            return super.introduce() + " I am a Teacher. I teach No Class.";
         }
     }
 
-    public String introduceWith(Student student){
-        if (student.getKlass().equals(this.getKlass())){
-            return super.introduce()+" I am a Teacher. I teach "+student.getName()+".";
-        }else{
-            return super.introduce()+" I am a Teacher. I don't teach "+student.getName()+".";
+    public String introduceWith(Student student) {
+        if (student.getKlass().equals(this.getKlass())) {
+            return super.introduce() + " I am a Teacher. I teach " + student.getName() + ".";
+        } else {
+            return super.introduce() + " I am a Teacher. I don't teach " + student.getName() + ".";
         }
     }
 }

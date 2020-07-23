@@ -37,8 +37,8 @@ public class Klass {
         this.observers = observers;
     }
 
-    public Student assignLeader(Student student){
-        if(!this.number.equals(student.getKlass().getNumber())){
+    public Student assignLeader(Student student) {
+        if (!this.number.equals(student.getKlass().getNumber())) {
             System.out.print("It is not one of us.\n");
             return null;
         }
@@ -48,33 +48,33 @@ public class Klass {
     }
 
     public String getDisplayName() {
-        return "Class "+number;
+        return "Class " + number;
     }
 
-    public void appendMember(Student student){
+    public void appendMember(Student student) {
         notifyAppendMember(student);
     }
 
     public boolean isIn(Student student) {
-        if(student.getKlass().getNumber().equals(this.number)){
+        if (student.getKlass().getNumber().equals(this.number)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public void register(ListenerObserver observer){
+    public void register(ListenerObserver observer) {
         this.observers.add(observer);
     }
 
-    public void notifyAppendMember(Student student){
-        for(ListenerObserver observer:observers) {
+    public void notifyAppendMember(Student student) {
+        for (ListenerObserver observer : observers) {
             observer.update(student);
         }
     }
 
-    public void notifyLeader(Student student){
-        for(ListenerObserver observer:observers){
+    public void notifyLeader(Student student) {
+        for (ListenerObserver observer : observers) {
             observer.updateLeader(student);
         }
     }

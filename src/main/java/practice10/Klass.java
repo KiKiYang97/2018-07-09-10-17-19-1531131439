@@ -1,7 +1,6 @@
 package practice10;
 
 
-
 public class Klass {
     private Integer number;
     private Student leader;
@@ -22,8 +21,8 @@ public class Klass {
         return leader;
     }
 
-    public Student assignLeader(Student student){
-        if(!this.number.equals(student.getKlass().getNumber())){
+    public Student assignLeader(Student student) {
+        if (!this.number.equals(student.getKlass().getNumber())) {
             System.out.print("It is not one of us.\n");
             return null;
         }
@@ -32,17 +31,17 @@ public class Klass {
     }
 
     public String getDisplayName() {
-        return "Class "+number;
+        return "Class " + number;
     }
 
-    public void appendMember(Student student){
+    public void appendMember(Student student) {
 
     }
 
     public boolean isIn(Student student) {
-        if(student.getKlass().getNumber().equals(this.number)){
+        if (student.getKlass().getNumber().equals(this.number)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

@@ -24,11 +24,12 @@ public class Klass {
         this.leader = leader;
     }
 
-    public Student assignLeader(Student student){
+    public Student assignLeader(Student student) {
         this.leader = student;
         return student;
     }
+
     public String getDisplayName() {
-        return "Class "+number;
+        return "Class " + number;
     }
 }

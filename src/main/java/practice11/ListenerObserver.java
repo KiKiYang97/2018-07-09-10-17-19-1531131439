@@ -6,6 +6,7 @@ package practice11;
  * @Date 22:02   2020/7/22
  * @ClassName ListenerObserver
  */
+//todo joinListener
 public interface ListenerObserver {
     void update(Student student);
 
