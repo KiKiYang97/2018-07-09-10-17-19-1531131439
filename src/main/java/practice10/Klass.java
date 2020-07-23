@@ -1,20 +1,20 @@
 package practice10;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Klass {
     private Integer number;
     private Student leader;
-
+    private Set<Integer> studentSet;
     public Klass(Integer number) {
         this.number = number;
+        this.studentSet = new HashSet<Integer>();
     }
 
     public Integer getNumber() {
         return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
     }
 
     public Student getLeader() {
@@ -22,7 +22,7 @@ public class Klass {
     }
 
     public Student assignLeader(Student student) {
-        if (!this.number.equals(student.getKlass().getNumber())) {
+        if (!this.studentSet.contains(student.getId())) {
             System.out.print("It is not one of us.\n");
             return null;
         }
@@ -35,7 +35,7 @@ public class Klass {
     }
 
     public void appendMember(Student student) {
-
+        this.studentSet.add(student.getId());
     }
 
     public boolean isIn(Student student) {

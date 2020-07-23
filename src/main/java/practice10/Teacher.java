@@ -19,12 +19,8 @@ public class Teacher extends Person {
         return classes;
     }
 
-    public void setClasses(Collection<Klass> classes) {
-        this.classes = classes;
-    }
-
     public String introduce() {
-        if (classes.size() > 0) {
+        if (classes!=null) {
             return super.introduce() + " I am a Teacher. I teach Class " + getEveryKlass(classes) + ".";
         } else {
             return super.introduce() + " I am a Teacher. I teach No Class.";
@@ -34,9 +30,9 @@ public class Teacher extends Person {
     private String getEveryKlass(Collection<Klass> klassCollection) {
         String everyKlass = "";
         for (Klass klass : klassCollection) {
-            everyKlass += klass.getNumber() + ",";
+            everyKlass += klass.getNumber() + ", ";
         }
-        return everyKlass.substring(0, everyKlass.length() - 1);
+        return everyKlass.substring(0, everyKlass.length() - 2);
     }
 
     public boolean isTeaching(Student student) {
