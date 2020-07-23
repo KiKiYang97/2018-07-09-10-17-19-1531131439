@@ -11,10 +11,6 @@ public class Klass {
         return number;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
     public String getDisplayName() {
         return "Class " + number;
     }
