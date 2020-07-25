@@ -20,12 +20,13 @@ public class Student extends Person {
         this.klass = klass;
     }
 
+    @Override
     public String introduce() {
 //        object equals
         if (klass.getLeader() == this) {
-            return super.introduce() + " I am a Student. I am Leader of Class " + klass.getNumber() + ".";
+            return super.introduce() + String.format(" I am a Student. I am Leader of Class %d.", klass.getNumber());
         } else {
-            return super.introduce() + " I am a Student. I am at Class " + klass.getNumber() + ".";
+            return super.introduce() + String.format(" I am a Student. I am at Class %d.", klass.getNumber());
         }
     }
 }

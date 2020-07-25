@@ -13,6 +13,10 @@ public class Person {
         this.age = age;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -30,7 +34,7 @@ public class Person {
     }
 
     public String introduce() {
-        return "My name is " + name + ". I am " + age + " years old.";
+        return String.format("My name is %s. I am %d years old.", name, age);
     }
 
     //    override object equals

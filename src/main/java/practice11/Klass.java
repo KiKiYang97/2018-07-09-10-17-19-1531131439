@@ -2,61 +2,50 @@ package practice11;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Klass {
     private Integer number;
     private Student leader;
+    private Set<Integer> studentIdsSet;
     private Collection<ListenerObserver> observers;
 
     public Klass(Integer number) {
         this.number = number;
-        this.observers = new ArrayList<ListenerObserver>();
+        this.studentIdsSet = new HashSet<>();
+        this.observers = new ArrayList<>();
     }
 
     public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
     public Student getLeader() {
         return leader;
     }
 
-    public void setLeader(Student leader) {
-        this.leader = leader;
-    }
-
-    public Collection<ListenerObserver> getObservers() {
-        return observers;
-    }
-
-    public void setObservers(Collection<ListenerObserver> observers) {
-        this.observers = observers;
-    }
-
-    public Student assignLeader(Student student) {
-        if (!this.number.equals(student.getKlass().getNumber())) {
+    public void assignLeader(Student student) {
+        if (!this.studentIdsSet.contains(student.getId())) {
             System.out.print("It is not one of us.\n");
-            return null;
         }
         this.leader = student;
         notifyLeader(student);
-        return student;
     }
 
     public String getDisplayName() {
-        return "Class " + number;
+        return String.format("Class %d",number);
     }
 
     public void appendMember(Student student) {
+        student.getKlass().studentIdsSet.remove(student.getId());
+        student.setKlass(this);
+        this.studentIdsSet.add(student.getId());
         notifyAppendMember(student);
     }
 
     public boolean isIn(Student student) {
-        if (student.getKlass().getNumber().equals(this.number)) {
+        if (this.studentIdsSet.contains(student.getId())) {
             return true;
         } else {
             return false;

@@ -21,13 +21,11 @@ public class Teacher extends Person implements ListenerObserver {
         return classes;
     }
 
-    public void setClasses(LinkedList<Klass> classes) {
-        this.classes = classes;
-    }
 
+    @Override
     public String introduce() {
         if (classes != null) {
-            return super.introduce() + " I am a Teacher. I teach Class " + getEveryKlass(classes) + ".";
+            return super.introduce() + String.format(" I am a Teacher. I teach Class %s.", getEveryKlass(classes));
         } else {
             return super.introduce() + " I am a Teacher. I teach No Class.";
         }
@@ -52,15 +50,16 @@ public class Teacher extends Person implements ListenerObserver {
     }
 
     public String introduceWith(Student student) {
-        String introduce = "";
+        StringBuilder introduce = new StringBuilder();
+        introduce.append(super.introduce());
         for (Klass clazz : classes) {
             if (student.getKlass().equals(clazz)) {
-                introduce = super.introduce() + " I am a Teacher. I teach " + student.getName() + ".";
+                introduce.append(String.format(" I am a Teacher. I teach %s.", student.getName()));
             } else {
-                introduce = super.introduce() + " I am a Teacher. I don't teach " + student.getName() + ".";
+                introduce.append(String.format(" I am a Teacher. I don't teach %s.", student.getName()));
             }
         }
-        return introduce;
+        return introduce.toString();
     }
 
     @Override
