@@ -2,7 +2,7 @@ package practice09;
 
 
 public class Klass {
-    private Integer number;
+    private final Integer number;
     private Student leader;
 
     public Klass(Integer number) {

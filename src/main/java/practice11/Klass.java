@@ -6,10 +6,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Klass {
-    private Integer number;
+    private final Integer number;
     private Student leader;
-    private Set<Integer> studentIdsSet;
-    private Collection<ListenerObserver> observers;
+    private final Set<Integer> studentIdsSet;
+    private final Collection<ListenerObserver> observers;
 
     public Klass(Integer number) {
         this.number = number;
@@ -34,7 +34,7 @@ public class Klass {
     }
 
     public String getDisplayName() {
-        return String.format("Class %d",number);
+        return String.format("Class %d", number);
     }
 
     public void appendMember(Student student) {
@@ -45,11 +45,7 @@ public class Klass {
     }
 
     public boolean isIn(Student student) {
-        if (this.studentIdsSet.contains(student.getId())) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.studentIdsSet.contains(student.getId());
     }
 
     public void register(ListenerObserver observer) {

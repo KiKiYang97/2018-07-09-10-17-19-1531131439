@@ -20,7 +20,7 @@ public class Teacher extends Person {
     }
 
     public String introduce() {
-        if (classes!=null) {
+        if (classes != null) {
             return super.introduce() + " I am a Teacher. I teach Class " + getEveryKlass(classes) + ".";
         } else {
             return super.introduce() + " I am a Teacher. I teach No Class.";

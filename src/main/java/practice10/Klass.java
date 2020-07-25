@@ -5,9 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Klass {
-    private Integer number;
+    private final Integer number;
     private Student leader;
-    private Set<Integer> studentSet;
+    private final Set<Integer> studentSet;
+
     public Klass(Integer number) {
         this.number = number;
         this.studentSet = new HashSet<Integer>();
@@ -39,10 +40,6 @@ public class Klass {
     }
 
     public boolean isIn(Student student) {
-        if (student.getKlass().getNumber().equals(this.number)) {
-            return true;
-        } else {
-            return false;
-        }
+        return student.getKlass().getNumber().equals(this.number);
     }
 }
